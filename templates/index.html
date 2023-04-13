@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body
+    style="
+      background-image: linear-gradient(
+        180deg,
+        #a9c9ff 10%,
+        hsl(317, 100%, 90%) 80%
+      );
+      height: 100vh;
+      width: 100vw;
+      font-family: Helvetica, Sans-Serif;
+    "
+  >
+    <center>
+      <div>
+        <h1>Clickbait and Fake headline detection</h1>
+      </div>
+      <div>
+        <form action="/check" method="POST">
+          <div style="margin-top: 5vw; margin-left: 16vw; margin-right: 16vw;">
+            <input
+              class="form-control form-control-lg"
+              type="text"
+              placeholder="Enter the headline"
+              style="height: 7vh;"
+              name="plag"
+            />
+          </div>
+          <br>
+          <input type="submit" class="btn btn-primary"  value="Check">
+        </form>
+      </div>
+      <div>
+        {% if res==1 %}
+             <h1>{{ click }}</h1>
+       {% endif %}
+      </div>
+    </center>
+  </body>
+</html>
